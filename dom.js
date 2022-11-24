@@ -1,28 +1,28 @@
 // Examining the DOCUMENT OBJECT
 
-console.dir(document.domain)
-console.dir(document.URL)
-console.dir(document.title)
+// console.dir(document.domain)
+// console.dir(document.URL)
+// console.dir(document.title)
 
-console.dir(document.doctype)
-console.dir(document.head)
-console.dir(document.all) // gives an array, an html collection prent inside the DOM. Can access the elements with indexes.
+// console.dir(document.doctype)
+// console.dir(document.head)
+// console.dir(document.all) // gives an array, an html collection prent inside the DOM. Can access the elements with indexes.
 
-console.log(document.all[10]); // gives the h1 element
-console.log(document.images); // gives an empt array as we dont have any images
+// console.log(document.all[10]); // gives the h1 element
+// console.log(document.images); // gives an empt array as we dont have any images
 
-// document.all[10].textContent = "hello me" not the best practice
+// // document.all[10].textContent = "hello me" not the best practice
 
-var headingTitle = document.getElementById("header-title");
-console.log(headingTitle);
-// // headingTitle.textContent = 'Hello TC'
-// // headingTitle.innerText = 'Hi IT'
-// // console.log(headerTitle.innerText)
+// var headingTitle = document.getElementById("header-title");
+// console.log(headingTitle);
+// // // headingTitle.textContent = 'Hello TC'
+// // // headingTitle.innerText = 'Hi IT'
+// // // console.log(headerTitle.innerText)
 
-// // innerText overwrote the tectContent text because innerText pays attention to the styling. In span it shows the text in both title and console. but With textContent the span text will disappear from screen but shows in console.
+// // // innerText overwrote the tectContent text because innerText pays attention to the styling. In span it shows the text in both title and console. but With textContent the span text will disappear from screen but shows in console.
 
-headingTitle.innerHTML = '<h3>Hello</h3>'
-headingTitle.style.border = '2px solid black'
+// headingTitle.innerHTML = '<h3>Hello</h3>'
+// headingTitle.style.border = '2px solid black'
 
 //getElementbyClassName
 
@@ -41,14 +41,36 @@ headingTitle.style.border = '2px solid black'
 
 //If i add another items using <li> tag the same properties will be applied in the 5th li tag. As we are using the getElementsByTagName method.
 
-var li = document.getElementsByTagName('li')
-console.log(li);
-console.log(li[1]);
-li[1].textContent = "hello1"
-li[2].style.backgroundColor = "yellow"
+// var li = document.getElementsByTagName('li')
+// console.log(li);
+// console.log(li[1]);
+// li[1].textContent = "hello1"
+// li[2].style.backgroundColor = "yellow"
 
 
-for(var i=0; i<li.length; i++){
-    li[i].style.fontWeight = "bold"
+// for(var i=0; i<li.length; i++){
+//     li[i].style.fontWeight = "bold"
+// }
+
+//QuerySelector ---- It will work for 1 item
+
+// var qitems= document.querySelector('.list-group-item');
+// qitems.style.backgroundColor = 'red'
+
+
+// var secondItem= document.querySelector('.list-group-item:nth-child(2)');
+// secondItem.style.backgroundColor='green'
+
+
+
+//QuerySelectorALL
+
+var seconItem = document.querySelectorAll('.list-group-item:nth-child(2)')
+console.log(seconItem)
+seconItem[0].style.color='red'
+
+var odd = document.querySelectorAll('.list-group-item:nth-child(odd)')
+
+for(var i=0; i<odd.length; i++){
+    odd[i].style.backgroundColor = 'green'
 }
-
