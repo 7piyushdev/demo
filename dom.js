@@ -15,13 +15,26 @@ console.log(document.images); // gives an empt array as we dont have any images
 
 var headingTitle = document.getElementById("header-title");
 console.log(headingTitle);
-// headingTitle.textContent = 'Hello TC'
-// headingTitle.innerText = 'Hi IT'
-// console.log(headerTitle.innerText)
+// // headingTitle.textContent = 'Hello TC'
+// // headingTitle.innerText = 'Hi IT'
+// // console.log(headerTitle.innerText)
 
-// innerText overwrote the tectContent text because innerText pays attention to the styling. In span it shows the text in both title and console. but With textContent the span text will disappear from screen but shows in console.
+// // innerText overwrote the tectContent text because innerText pays attention to the styling. In span it shows the text in both title and console. but With textContent the span text will disappear from screen but shows in console.
 
 headingTitle.innerHTML = '<h3>Hello</h3>'
 headingTitle.style.border = '2px solid black'
+
+
+
+var items = document.getElementsByClassName('list-group-item')
+console.log(items);
+console.log(items[1]);
+items[1].textContent = "hello1"
+items[2].style.backgroundColor = "green"
+// items.style.fontWeight = "bold"
+
+for(var i=0; i<items.length; i++){
+    items[i].style.fontWeight = "bold"
+}
 
 
